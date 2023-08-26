@@ -1,6 +1,6 @@
 ## Getting Started
 
-Gophig may be imported using `go get`:
+**rhookie** may be imported using `go get`:
 ```
 go get github.com/restartfu/rhookie
 ```
