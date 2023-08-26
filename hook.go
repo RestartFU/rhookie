@@ -14,14 +14,6 @@ const (
 	noExtraEndpoint = ""
 )
 
-// Payload is the payload sent to the webhook.
-type Payload struct {
-	// Content is the content of the message.
-	Content string `json:"content"`
-	// Embeds are the embeds sent with the message.
-	Embeds []Embed `json:"embeds"`
-}
-
 // Hook is a Discord webhook.
 type Hook struct {
 	id, token string
