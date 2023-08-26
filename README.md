@@ -9,14 +9,14 @@ go get github.com/restartfu/rhookie
 
 Creating a new `Hook` instance:
 ```go
-h := NewHook("id", "token")
+h := rhookie.NewHook("id", "token")
 ```
 Sending a message using the `Hook`
 ```go
-h := NewHook("id", "token")
+h := rhookie.NewHook("id", "token")
 
-var payload Payload
-payload.Embeds = []Embed {
+var payload rhookie.Payload
+payload.Embeds = []rhookie.Embed {
   {
     Title:       "My Cool Webhook",
     Description: "Sent using rhookie",
@@ -27,10 +27,10 @@ _ = h.SendMessage(payload)
 ```
 Editing an existing message previously sent by the webhook
 ```go
-h := NewHook("id", "token")
+h := rhookie.NewHook("id", "token")
 
-var payload Payload
-payload.Embeds = []Embed {
+var payload rhookie.Payload
+payload.Embeds = []rhookie.Embed {
   {
     Title:       "My New Content",
     Description: "Edited using rhookie",
