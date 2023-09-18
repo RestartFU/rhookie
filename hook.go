@@ -9,7 +9,7 @@ import (
 
 const (
 	// baseURL is the base URL of the discord webhook API.
-	baseURL = "https://discord.com/api/webhooks/%s/%s"
+	baseURL = "https://discord.com/api/webhooks/%s/%s/"
 	// noExtraEndpoint is an endpoint that doesn't have any extra path.
 	noExtraEndpoint = ""
 )
@@ -26,7 +26,7 @@ func (h Hook) SendMessage(payload Payload) error {
 
 // EditMessage edits a message sent by the webhook.
 func (h Hook) EditMessage(id string, payload Payload) error {
-	return h.doRequest(http.MethodPatch, "message/"+id, payload)
+	return h.doRequest(http.MethodPatch, "messages/"+id, payload)
 }
 
 // doRequest sends a request to the webhook.
