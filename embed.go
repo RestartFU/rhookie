@@ -94,6 +94,6 @@ func (e Embed) WithFields(fields ...Field) Embed {
 
 // WithTimestamp adds a timestamp to the embed.
 func (e Embed) WithTimestamp(t time.Time) Embed {
-	e.Timestamp = t.Format(time.RFC3339)
+	e.Timestamp = t.Format("2006-01-02T15:04:05.000Z")
 	return e
 }
