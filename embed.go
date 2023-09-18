@@ -1,5 +1,7 @@
 package rhookie
 
+import "time"
+
 // Field is a field in an embed.
 type Field struct {
 	// Name is the name of the field.
@@ -44,6 +46,8 @@ type Embed struct {
 	Footer string `json:"footer,omitempty"`
 	// Fields are the fields of the embed.
 	Fields []Field `json:"fields,omitempty"`
+	// Timestamp is the timestamp of the embed.
+	Timestamp string `json:"timestamp,omitempty"`
 }
 
 // WithTitle adds a title to the embed.
@@ -85,5 +89,11 @@ func (e Embed) WithFooter(footer string) Embed {
 // WithFields adds fields to the embed.
 func (e Embed) WithFields(fields ...Field) Embed {
 	e.Fields = append(e.Fields, fields...)
+	return e
+}
+
+// WithTimestamp adds a timestamp to the embed.
+func (e Embed) WithTimestamp(t time.Time) Embed {
+	e.Timestamp = t.Format(time.RFC3339)
 	return e
 }
