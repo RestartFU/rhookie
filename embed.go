@@ -1,7 +1,5 @@
 package rhookie
 
-import "time"
-
 // Footer is the footer of the embed.
 type Footer struct {
 	// Text is the text of the footer.
@@ -101,7 +99,7 @@ func (e Embed) WithFields(fields ...Field) Embed {
 }
 
 // WithTimestamp adds a timestamp to the embed.
-func (e Embed) WithTimestamp(t time.Time) Embed {
-	e.Timestamp = t.Format("2006-01-02T15:04:05.000Z")
+func (e Embed) WithTimestamp(t string) Embed {
+	e.Timestamp = t
 	return e
 }
