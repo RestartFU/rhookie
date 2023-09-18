@@ -2,6 +2,14 @@ package rhookie
 
 import "time"
 
+// Footer is the footer of the embed.
+type Footer struct {
+	// Text is the text of the footer.
+	Text string `json:"text"`
+	// IconURL is the URL of the icon of the footer.
+	IconURL string `json:"icon_url,omitempty"`
+}
+
 // Field is a field in an embed.
 type Field struct {
 	// Name is the name of the field.
@@ -43,7 +51,7 @@ type Embed struct {
 	// Color is the color of the embed.
 	Color int `json:"color,omitempty"`
 	// Footer is the footer of the embed.
-	Footer string `json:"footer,omitempty"`
+	Footer Footer `json:"footer,omitempty"`
 	// Fields are the fields of the embed.
 	Fields []Field `json:"fields,omitempty"`
 	// Timestamp is the timestamp of the embed.
@@ -81,7 +89,7 @@ func (e Embed) WithColor(color int) Embed {
 }
 
 // WithFooter adds a footer to the embed.
-func (e Embed) WithFooter(footer string) Embed {
+func (e Embed) WithFooter(footer Footer) Embed {
 	e.Footer = footer
 	return e
 }
