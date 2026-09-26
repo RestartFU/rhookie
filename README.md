@@ -41,3 +41,15 @@ payload := rhookie.Payload{}.
 
 _ = h.EditMessage("id", payload)
 ```
+
+Sending a file with a message:
+```go
+ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+defer cancel()
+
+message, err := h.SendFileWithResponse(ctx,
+  rhookie.Payload{}.WithContent("New arena export"),
+  "arena.vap", data)
+_ = message
+_ = err
+```
